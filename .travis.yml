@@ -16,6 +16,7 @@ before_install:
   - docker-compose version
   - echo "Login into Docker Hub"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "Building $TRAVIS_COMMIT"
 
 jobs:
   include:
