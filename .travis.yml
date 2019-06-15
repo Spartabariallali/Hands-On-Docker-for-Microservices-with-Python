@@ -15,12 +15,14 @@ before_install:
 jobs:
   include:
     - stage: tests
+      name: "Unit Tests"
       script:
       - cd ch4
       - docker-compose build db
       - docker-compose build test-postgresql
       - docker-compose run test-postgresql
     - stage: tests
+      name: "Static Analysis"
       script:
       - cd ch4
       - docker-compose build static-analysis
