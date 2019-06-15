@@ -34,13 +34,13 @@ jobs:
       - cd ch4
       - docker-compose build static-analysis
       - docker-compose run static-analysis
-       - stage: push
-         script:
-         - cd ch4
-        #   - docker-compose build server
-        #   - docker tag thoughts_server:latest jaimebuelta/thoughts-backend:$GIT_SHA
-        #   - docker push jaimebuelta/thoughts-backend:$GIT_SHA
-         - docker tag thoughts_server:latest jaimebuelta/thoughts-backend:$TRAVIS_BRANCH
+    - stage: push
+      script:
+      - cd ch4
+      #   - docker-compose build server
+      #   - docker tag thoughts_server:latest jaimebuelta/thoughts-backend:$GIT_SHA
+      #   - docker push jaimebuelta/thoughts-backend:$GIT_SHA
+      - docker tag thoughts_server:latest jaimebuelta/thoughts-backend:$TRAVIS_BRANCH
 deploy:
    - provider: script
      script: docker push jaimebuelta/thoughts-backend:$TRAVIS_BRANCH
