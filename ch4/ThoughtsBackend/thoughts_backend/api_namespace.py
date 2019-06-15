@@ -37,7 +37,6 @@ model = {
 thought_model = api_namespace.model('Thought', model)
 
 
-
 @api_namespace.route('/me/thoughts/')
 class MeThoughtListCreate(Resource):
 
