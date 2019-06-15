@@ -20,7 +20,7 @@ jobs:
       - docker-compose build db
       - docker-compose build test-postgresql
       - docker-compose run test-postgresql
-    - stage: static-analysis
+    - stage: tests
       script:
       - cd ch4
       - docker-compose build static-analysis
