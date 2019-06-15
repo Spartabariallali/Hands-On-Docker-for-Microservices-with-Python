@@ -49,4 +49,4 @@ jobs:
       - provider: script
         script: docker push jaimebuelta/thoughts-backend:$TRAVIS_TAG
         on:
-          tag: True
+          tags: True
