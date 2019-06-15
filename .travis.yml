@@ -14,14 +14,14 @@ before_install:
 
 script:
 - cd ch4
-- echo "travis_fold:start:SCRIPT Build"
+- echo "travis_fold:start:BUILD"
 - docker-compose build db
 - docker-compose build static-analysis
 - docker-compose build test-postgresql
-- echo "travis_fold:end:SCRIPT Build"
-- echo "travis_fold:start:SCRIPT test"
+- echo "travis_fold:end:BUILD"
+- echo "travis_fold:start:TEST"
 - docker-compose run test-postgresql
-- echo "travis_fold:end:SCRIPT test"
-- echo "travis_fold:start:SCRIPT static analysis"
+- echo "travis_fold:end:TEST"
+- echo "travis_fold:start:STATIC-ANALYSIS"
 - docker-compose run static-analysis
-- echo "travis_fold:end:SCRIPT static analysis"
+- echo "travis_fold:end:STATIC-ANALYSIS"
