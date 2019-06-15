@@ -2,6 +2,8 @@ services:
     - docker
 
 script:
+    - docker --version
+    - docker-compose version
     - cd ch3
     - docker-compose build
     - docker-compose run test
